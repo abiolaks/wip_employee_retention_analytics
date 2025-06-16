@@ -5,6 +5,10 @@ from auth import login
 from utils import predict_attrition
 from llm import generate_insights
 from storage_logic import load_data
+import sys
+import os
+
+sys.path.append(os.path.dirname(__file__))
 
 # Custom CSS for styling
 st.set_page_config(page_title="Attrition Insight System", layout="wide", page_icon="📈")
