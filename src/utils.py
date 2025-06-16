@@ -1,5 +1,13 @@
 import joblib
 import os
+import sys
+
+# Ensure the custom transformer used in the preprocessing pipeline is
+# available when unpickling the joblib artifact. This import is not used
+# directly in the code, but joblib requires it to locate the class
+# definition.
+sys.path.append(os.path.dirname(__file__))
+from preprocessing_pipeline import FeatureEngineer  # noqa: F401
 
 # model = joblib.load("../model/employee_attrition_model.pkl")
 # preprocessor = joblib.load("../artifacts/preprocessor_pipeline.pkl")
