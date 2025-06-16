@@ -1,13 +1,16 @@
 from openai import OpenAI
 from dotenv import load_dotenv
-import os
+
+# import os
 import re
+import streamlit as st
 
 load_dotenv()
 
 # Initialize DeepSeek client
 client = OpenAI(
-    api_key=os.getenv("DEEPSEEK_API_KEY"),
+    # api_key=os.getenv("DEEPSEEK_API_KEY") # uncomment to run locally using .env file
+    api_key=st.secrets["DEEPSEEK_API_KEY"],
     base_url="https://api.deepseek.com/v1",
 )
 
